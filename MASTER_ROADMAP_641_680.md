@@ -1,7 +1,7 @@
 # Autonomous Agentic System — Master Roadmap 641–680
 
 ## Mission
-Extend the personal autonomous platform from a secure execution core into a dependable system that can manage real-world information, communication, schedules, resources, and long-running goals while remaining policy-governed and human-controllable.
+Advance the personal autonomous operating system beyond the safety and execution baseline into robust knowledge, adaptive planning, governed tool use, and multi-project coordination while preserving explicit human control.
 
 ## Roadmap rules
 - This file is the master context for Tasks 641–680.
@@ -9,137 +9,137 @@ Extend the personal autonomous platform from a secure execution core into a depe
 - GitHub remains the persistent source of truth.
 - Core behavior remains domain-agnostic; domain behavior belongs in adapters.
 - Preserve compatibility with Tasks 001–640.
-- Prefer explicit policies and measurable behavior over hidden autonomy.
+- Prefer measurable, policy-governed behavior over hidden autonomy.
 
 ## Tasks
 
-### Phase 49 — Identity and account/session management
+### Phase 49 — Knowledge and memory architecture
 
-**TASK-641 — Define identity model**  
-Define the authenticated owner, service identities, agent identities, project ownership, and delegated authority relationships.
+**TASK-641 — Define canonical knowledge model**  
+Standardize facts, sources, artifacts, observations, decisions, hypotheses, confidence, provenance, and timestamps.
 
-**TASK-642 — Implement identity/session registry**  
-Persist active identities, sessions, authentication state, expiry, and revocation metadata without storing unnecessary secrets.
+**TASK-642 — Implement knowledge-store abstraction**  
+Provide a provider-neutral interface for durable project and reusable system knowledge.
 
-**TASK-643 — Implement delegated-permission model**  
-Allow narrowly scoped delegation of project or tool authority with explicit expiry and revocation.
+**TASK-643 — Implement provenance tracking**  
+Preserve origin, supporting evidence, transformations, and relationships for stored knowledge.
 
-**TASK-644 — Implement credential reference manager**  
-Represent credentials as secure references instead of exposing secrets to project state or agent prompts.
+**TASK-644 — Implement confidence model**  
+Represent confidence and evidence strength for facts, summaries, inferences, and recommendations.
 
-**TASK-645 — Implement credential rotation hooks**  
-Support credential replacement and invalidation without breaking unrelated projects.
+**TASK-645 — Implement knowledge conflict model**  
+Represent contradictory or competing claims without silently overwriting prior evidence.
 
-**TASK-646 — Implement session-expiry handling**  
-Detect expired external sessions and safely pause affected actions while preserving retry/re-authentication state.
+**TASK-646 — Implement knowledge supersession**  
+Mark outdated information as superseded while preserving historical lineage.
 
-**TASK-647 — Implement identity revocation flow**  
-Immediately prevent revoked identities or sessions from performing further protected actions.
+**TASK-647 — Implement relevance retrieval**  
+Retrieve knowledge using task, project, domain, recency, confidence, and provenance signals.
 
-**TASK-648 — Build identity/delegation audit trail**  
-Record grants, revocations, session changes, and privileged operations with correlation identifiers.
+**TASK-648 — Implement bounded context assembly**  
+Build context packages from relevant knowledge while enforcing model/context budgets.
 
-**TASK-649 — Build identity security test suite**  
-Test impersonation, stale sessions, revoked access, privilege escalation, cross-project delegation, and credential leakage.
+**TASK-649 — Implement knowledge isolation**  
+Prevent unauthorized cross-project leakage while permitting explicitly approved reusable knowledge.
 
-**TASK-650 — Build identity-aware end-to-end test**  
-Run a representative project using authenticated identity, delegated tools, credential references, revocation, and safe recovery.
+**TASK-650 — Build knowledge integrity test suite**  
+Test provenance, conflicts, supersession, retrieval, isolation, and context assembly.
 
-### Phase 50 — Scheduling, time, and calendar intelligence
+### Phase 50 — Adaptive planning and decomposition
 
-**TASK-651 — Define time-aware project model**  
-Represent deadlines, schedules, time windows, recurring tasks, dependencies on dates, and timezone semantics.
+**TASK-651 — Define planning-quality model**  
+Measure task coverage, dependency correctness, ambiguity, expected effort, risk, and alignment to success criteria.
 
-**TASK-652 — Implement scheduler abstraction**  
-Provide a provider-neutral scheduling interface for timers, recurring events, calendar events, and wake-up conditions.
+**TASK-652 — Implement plan critique stage**  
+Review generated plans before execution and identify missing, redundant, or weak tasks.
 
-**TASK-653 — Implement deadline monitoring**  
-Detect approaching deadlines and trigger reprioritization or escalation according to policy.
+**TASK-653 — Implement plan revision loop**  
+Allow PM planning to revise plans based on critique and current project evidence.
 
-**TASK-654 — Implement conflict-aware scheduling**  
-Detect overlapping commitments, resource conflicts, and impossible schedules before execution.
+**TASK-654 — Implement uncertainty-aware decomposition**  
+Force decomposition when task uncertainty or complexity exceeds configured execution thresholds.
 
-**TASK-655 — Implement calendar event planning**  
-Translate approved project needs into calendar-aware actions without silently modifying personal schedules.
+**TASK-655 — Implement discovery-task generation**  
+Create research/discovery tasks when the project cannot yet be planned reliably.
 
-**TASK-656 — Implement recurring workflow scheduler**  
-Support daily, weekly, monthly, and condition-based recurring workflows with idempotent execution.
+**TASK-656 — Implement dependency-risk analysis**  
+Identify fragile or high-impact dependencies before execution.
 
-**TASK-657 — Implement quiet-hours and notification windows**  
-Respect user-defined times for interruptions, reminders, and proactive notifications.
+**TASK-657 — Implement critical-path analysis**  
+Identify work that dominates completion time and prioritize it appropriately.
 
-**TASK-658 — Implement timezone and clock normalization**  
-Handle local time, daylight-saving changes, UTC conversion, and timestamp consistency across integrations.
+**TASK-658 — Implement dynamic reprioritization**  
+Adjust priorities when deadlines, blockers, evidence, resources, or user instructions change.
 
-**TASK-659 — Build scheduling and calendar test suite**  
-Test deadlines, recurring schedules, conflicts, DST/timezone changes, missed events, and recovery.
+**TASK-659 — Implement scope-drift detection**  
+Detect generated work that expands beyond the approved objective and require policy-based correction.
 
-**TASK-660 — Build time-aware autonomy integration test**  
-Run a project whose execution depends on deadlines, calendar constraints, recurring work, and time-based escalation.
+**TASK-660 — Build adaptive-planning evaluation suite**  
+Compare planning quality across simple, ambiguous, changing, and high-dependency projects.
 
-### Phase 51 — Communication and information processing
+### Phase 51 — Tool orchestration and external capability governance
 
-**TASK-661 — Define communication action model**  
-Standardize reading, drafting, sending, replying, labeling, routing, and summarizing messages under policy controls.
+**TASK-661 — Define canonical tool contract**  
+Standardize tool metadata, capabilities, inputs, outputs, permissions, risk, cost, and side effects.
 
-**TASK-662 — Implement message ingestion pipeline**  
-Ingest approved external messages into normalized events with provenance and trust labels.
+**TASK-662 — Implement tool registry**  
+Register approved tools independently from projects and agents.
 
-**TASK-663 — Implement communication intent classification**  
-Classify messages into information, request, decision, notification, task, or potential threat categories.
+**TASK-663 — Implement capability-based tool routing**  
+Select tools using task requirements, policy, availability, cost, and risk.
 
-**TASK-664 — Implement communication triage engine**  
-Prioritize incoming information based on project relevance, urgency, sender trust, and user policy.
+**TASK-664 — Implement tool authorization checks**  
+Verify that the current user, project, task, and agent are permitted to invoke a tool.
 
-**TASK-665 — Implement draft-before-send workflow**  
-Allow the system to prepare outbound messages for review where policy requires human approval.
+**TASK-665 — Implement dry-run support**  
+Allow side-effecting tools to preview planned actions where technically possible.
 
-**TASK-666 — Implement autonomous communication policy**  
-Define which classes of routine communications may be sent automatically and which always require approval.
+**TASK-666 — Implement tool idempotency controls**  
+Prevent duplicate external effects during retries or repeated events.
 
-**TASK-667 — Implement conversation threading/context**  
-Maintain bounded context for message threads without exposing unrelated private communications.
+**TASK-667 — Implement tool rate-limit handling**  
+Handle quotas, throttling, backoff, and temporary provider limits safely.
 
-**TASK-668 — Implement communication provenance/audit**  
-Record source, classification, actions, approval, and delivery status for governed communications.
+**TASK-668 — Implement tool result provenance**  
+Record tool, inputs, time, authorization, and execution lineage for externally derived results.
 
-**TASK-669 — Build communication security and reliability tests**  
-Test phishing-like content, prompt injection, wrong-recipient prevention, duplicate sends, unauthorized replies, and failures.
+**TASK-669 — Implement tool failure classification**  
+Distinguish authentication, permission, transient, invalid-input, provider, and policy failures.
 
-**TASK-670 — Build communication workflow integration test**  
-Run a synthetic workflow from message ingestion through triage, planning, approval, outbound communication, and audit.
+**TASK-670 — Build governed tool-execution test suite**  
+Test routing, authorization, dry-run behavior, idempotency, limits, provenance, and failures.
 
-### Phase 52 — Proactive personal operations
+### Phase 52 — Multi-project coordination
 
-**TASK-671 — Define proactive-agent boundaries**  
-Specify what the system may infer, suggest, schedule, or execute proactively and what always requires user confirmation.
+**TASK-671 — Define project relationship model**  
+Represent related, dependent, cloned, parent, child, and shared-resource projects explicitly.
 
-**TASK-672 — Implement opportunity/obligation detection**  
-Detect actionable opportunities, deadlines, follow-ups, neglected commitments, and useful maintenance items from trusted context.
+**TASK-672 — Implement cross-project dependency model**  
+Allow approved outputs from one project to become dependencies for another without hidden coupling.
 
-**TASK-673 — Implement proactive recommendation scoring**  
-Rank candidate actions using benefit, urgency, confidence, effort, risk, and user preferences.
+**TASK-673 — Implement shared-resource arbitration**  
+Coordinate scarce agents, models, tools, browser sessions, and compute across projects.
 
-**TASK-674 — Implement proactive-action queue**  
-Persist suggested actions with evidence, rationale, risk, expiration, and approval requirements before execution.
+**TASK-674 — Implement project priority arbitration**  
+Resolve competing project priorities using deadlines, importance, urgency, and explicit policy.
 
-**TASK-675 — Implement low-risk autonomous action policy**  
-Permit configurable low-risk actions to execute automatically within strict scope and budget limits.
+**TASK-675 — Implement cross-project knowledge-sharing policy**  
+Control what reusable knowledge may move between projects and under what conditions.
 
-**TASK-676 — Implement proactive approval workflow**  
-Present higher-risk recommendations for concise human approval with clear evidence and consequences.
+**TASK-676 — Implement project isolation enforcement**  
+Prevent accidental access to another project's private state, credentials, or artifacts.
 
-**TASK-677 — Implement proactive action deduplication**  
-Prevent repeated suggestions or repeated actions when multiple observations identify the same opportunity.
+**TASK-677 — Implement portfolio-level scheduling**  
+Schedule work across multiple projects while respecting dependencies, budgets, and capacity.
 
-**TASK-678 — Implement proactive action feedback loop**  
-Capture whether recommendations were useful, rejected, ignored, or harmful and feed that evidence into future scoring.
+**TASK-678 — Implement portfolio health analysis**  
+Summarize project risk, progress, resources, interventions, and blocked work across the portfolio.
 
-**TASK-679 — Build proactive-operations safety tests**  
-Test scope creep, repeated actions, weak-confidence recommendations, conflicting preferences, and approval bypass attempts.
+**TASK-679 — Build multi-project coordination test suite**  
+Test contention, dependencies, isolation, prioritization, resource arbitration, and knowledge sharing.
 
-**TASK-680 — Build personal-operations integration test**  
-Run a low-risk recurring personal workflow where the system observes, recommends, receives/uses approvals, executes, and reports outcomes.
+**TASK-680 — Build portfolio autonomy acceptance test**  
+Run several concurrent projects with shared constraints and verify correctness, isolation, resource awareness, and human controllability.
 
 ## Completion target for this chunk
-By Task 680, the platform should have a coherent identity/credential layer, time and scheduling intelligence, governed communication handling, and a bounded proactive-operations capability. The system should be able to interact with the owner's real-world information and routines without turning autonomy into unrestricted authority.
+By Task 680, the platform should have durable provenance-aware knowledge, adaptive planning, governed tool orchestration, and portfolio-level coordination. It should be able to maintain useful persistent context and manage several concurrent objectives without collapsing their boundaries.
